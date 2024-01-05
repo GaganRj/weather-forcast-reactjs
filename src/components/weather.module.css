@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Rocher";
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  }
+  
+  .maincontainer {
+    height: 100vh;
+    width: 100%;
+    background-image: url(../assets/images/bg-1.png);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cardcontainer {
+    width: 800px;
+    height: 450px;
+    border-radius: 25px;
+    opacity: 0.9;
+    padding: 30px;
+    /* filter: blur(1px);
+    -webkit-filter: blur(1px); */
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .time {
+    font-size: 48px;
+    color: white;
+    letter-spacing: 0.5px;
+    font-family: "Rocher";
+    font-weight: 100;
+  }
+  @font-palette-values --time {
+    font-family: Rocher;
+    base-palette: 9;
+  }
+  .date {
+    font-size: 18px;
+    font-weight: 700;
+    -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    color: transparent;
+    letter-spacing: 1px;
+  }
+  
+  .scon {
+    transition: transform 0.2s; /* Animation */
+  }
+  .scon:hover {
+    transform: scale(1.2);
+  }
+  /*Resize the wrap to see the search bar change!*/
+  .wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  @media only screen and (max-width: 480px) and (min-width: 261px) {
+    .cardcontainer {
+      padding: 16px;
+      margin: 10px;
+    }
+  }

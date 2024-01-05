@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-weight: 400;
+  color-scheme: light dark;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0px !important;
+  font-family: 'Montserrat', sans-serif;
+}
+a {
+  color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+  text-decoration: none !important;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0px !important;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--bs-heading-color);
+}
+.css-953pxc-MuiInputBase-root-MuiInput-root::before {
+  border-bottom: 1px solid white !important;
+}
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+  color: white !important;
+}
+.css-953pxc-MuiInputBase-root-MuiInput-root{
+  color: white !important;
+}
