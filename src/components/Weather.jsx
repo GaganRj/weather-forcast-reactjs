@@ -6,7 +6,7 @@ import axios from 'axios';
 // import { MagnifyingGlass } from 'react-loader-spinner';
 import noresult from '../assets/images/noresults.png'
 import toast, { Toaster } from 'react-hot-toast';
-import Loader from './Loders/Loader';
+import Loaderss from './Loders/Loader';
 
 const Weather = () => {
 
@@ -117,7 +117,7 @@ const Weather = () => {
                             </div>
                             :
                             <div className='flex items-center justify-center'>
-                                <Loader />
+                                <Loaderss />
                             </div>
                     }
                 </div>
