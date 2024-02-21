@@ -1,11 +1,12 @@
 import { TextField } from '@mui/material';
 import { Cloudy, Search, ThermometerSun, Wind } from 'lucide-react';
 import Style from './weather.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { MagnifyingGlass } from 'react-loader-spinner';
+// import { MagnifyingGlass } from 'react-loader-spinner';
 import noresult from '../assets/images/noresults.png'
 import toast, { Toaster } from 'react-hot-toast';
+import Loader from './Loders/Loader';
 
 const Weather = () => {
 
@@ -21,9 +22,20 @@ const Weather = () => {
     //loder-spinner 
     const [loading, setLoading] = useState(false)
 
+    //time 
+    const [formattedTime, setFormattedTime] = useState('');
+
+
     //only time declaration
-    const options = { hour12: true, hour: '2-digit', minute: '2-digit' };
-    const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            const options = { hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const currentDate = new Date();
+            const newFormattedTime = new Intl.DateTimeFormat('en-US', options).format(currentDate);
+            setFormattedTime(newFormattedTime);
+        }, 1000);
+        return () => clearInterval(intervalId);
+    }, []); 
 
     //declartion for day date month year
     const options2 = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -105,16 +117,7 @@ const Weather = () => {
                             </div>
                             :
                             <div className='flex items-center justify-center'>
-                                <MagnifyingGlass
-                                    visible={true}
-                                    height="80"
-                                    width="80"
-                                    ariaLabel="magnifying-glass-loading"
-                                    wrapperStyle={{}}
-                                    wrapperClass="magnifying-glass-wrapper"
-                                    glassColor="#c0efff"
-                                    color="#e15b64"
-                                />
+                                <Loader />
                             </div>
                     }
                 </div>
